@@ -2,19 +2,16 @@
 <html  lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
   <head>
     <meta charset="utf-8" /><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(3),u=e(4),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],t),e}finally{f.emit("fn-end",[c.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e,n){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now(),!1,n])}},{}],2:[function(e,n,t){function r(e,n){if(!o)return!1;if(e!==o)return!1;if(!n)return!0;if(!i)return!1;for(var t=i.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var u=navigator.userAgent,f=u.match(a);f&&u.indexOf("Chrome")===-1&&u.indexOf("Chromium")===-1&&(o="Safari",i=f[1])}n.exports={agent:o,version:i,match:r}},{}],3:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],4:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],5:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=v(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return p[e]=p[e]||o(t)}function w(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var h={},y={},b={on:l,addEventListener:l,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:w,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(3),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!E++){var e=x.info=NREUM.info,n=l.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+x.offset],null,"api");var t=l.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===l.readyState&&i()}function i(){f("mark",["domContent",a()+x.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-x.offset}var u=(new Date).getTime(),f=e("handle"),c=e(3),s=e("ee"),p=e(2),d=window,l=d.document,m="addEventListener",v="attachEvent",g=d.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:g,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1123.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),x=n.exports={offset:u,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};e(1),l[m]?(l[m]("DOMContentLoaded",i,!1),d[m]("load",r,!1)):(l[v]("onreadystatechange",o),d[v]("onload",r)),f("mark",["firstbyte",u],null,"api");var E=0,O=e(5)},{}]},{},["loader"]);</script>
-<script>var dataLayer = [{"entityLanguage":"en","entityCountry":"US","siteName":"Internal Revenue Service","entityType":"node","entityBundle":"landing_page","entityId":"19656","entityTitle":"Filing","entityLangcode":"en","entityVid":"1196201","entityCreated":"1495828542","entityStatus":"1","primaryCategory":"filing","field_pup_ot_guid":"298286f203fca410VgnVCM1000003b4d0a0aRCRD","field_pup_ot_url":"https:\/\/www.irs.gov\/filing\/filing-landing-page","entityTaxonomy":{"pup_audience":{"6566":"Individuals"},"pup_channels":{"2701":"Filing"},"pup_navigation":{"18191":"Individuals"},"pup_organization":{"14081":"SE:OLS:OEO:PUB"},"pup_topic":{"9286":"Filing"}},"userUid":0}];</script>
-<meta name="title" content="Filing | Internal Revenue Service" />
+<script>var dataLayer = [{"entityLanguage":"en","entityCountry":"US","siteName":"Internal Revenue Service","entityType":"node","entityBundle":"landing_page","entityId":"22856","entityTitle":"How to File","entityLangcode":"en","entityVid":"1196216","entityCreated":"1500557594","entityStatus":"1","primaryCategory":"filing","subCategory1":"individuals","subCategory2":"how-to-file","field_pup_ot_guid":[],"field_pup_ot_url":[],"entityTaxonomy":{"pup_audience":{"6566":"Individuals"},"pup_channels":{"2701":"Filing"},"pup_navigation":{"18216":"How to File"},"pup_organization":{"25931":"SE:W:CAS:SP:SPB"},"pup_topic":{"9286":"Filing"}},"userUid":0}];</script>
+<meta name="title" content="How to File | Internal Revenue Service" />
 <meta name="robots" content="index, follow" />
-<link rel="canonical" href="https://www.irs.gov/filing" />
+<link rel="canonical" href="https://www.irs.gov/filing/individuals/how-to-file" />
 <meta name="twitter:card" content="summary" />
 <meta http-equiv="content-language" content="en" />
-<meta name="twitter:title" content="Filing | Internal Revenue Service" />
-<meta name="description" content="Find out whether you have to file, how to file, where to file, how to get an extension of time to file and more." />
-<meta name="twitter:description" content="Other Resources
-
-Get a copy of your tax record to view your tax account transactions or line-by-line tax return information for a specific tax year." />
-<meta name="abstract" content="Find out whether you have to file, how to file, where to file, how to get an extension of time to file and more." />
-<meta name="original-source" content="https://www.irs.gov/filing/filing-landing-page" />
+<meta name="twitter:title" content="How to File | Internal Revenue Service" />
+<meta name="description" content="Find out how to file your tax return electronically with e-file or how to mail it to the IRS" />
+<meta name="twitter:description" content="*" />
+<meta name="abstract" content="Find out how to file your tax return electronically with e-file or how to mail it to the IRS" />
 <meta name="rights" content="United States Internal Revenue Services" />
 <meta name="twitter:image:alt" content="IRS logo" />
 <meta name="twitter:image" content="https://www.irs.gov/pub/image/logo_small.jpg" />
@@ -27,10 +24,10 @@ Get a copy of your tax record to view your tax account transactions or line-by-l
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="audience" content="NULL" />
 <meta name="irsStandard-type" content="NULL" />
-<meta name="uniqueID" content="19656" />
+<meta name="uniqueID" content="22856" />
 <meta name="isHistorical" content="no" />
 <meta name="historical-date" content="NULL" />
-<meta name="changed" content="1556739787" />
+<meta name="changed" content="1556739800" />
 <meta name="topic" content="NULL" />
 <meta name="guidance" content="NULL" />
 <meta name="channel" content="NULL" />
@@ -38,18 +35,12 @@ Get a copy of your tax record to view your tax account transactions or line-by-l
 <meta name="otID" content="NULL" />
 <meta name="prod_SEID" content="NULL" />
 <link rel="shortcut icon" href="/themes/custom/pup_base/favicon.ico" type="image/vnd.microsoft.icon" />
-<link rel="alternate" hreflang="en" href="https://www.irs.gov/filing" />
-<link rel="alternate" hreflang="es" href="https://www.irs.gov/es/filing" />
-<link rel="alternate" hreflang="zh-hant" href="https://www.irs.gov/zh-hant/filing" />
-<link rel="alternate" hreflang="ko" href="https://www.irs.gov/ko/filing" />
-<link rel="alternate" hreflang="ru" href="https://www.irs.gov/ru/filing" />
-<link rel="alternate" hreflang="vi" href="https://www.irs.gov/vi/filing" />
-<link rel="alternate" hreflang="ht" href="https://www.irs.gov/ht/filing" />
-<link rel="revision" href="/filing" />
+<link rel="alternate" hreflang="en" href="https://www.irs.gov/filing/individuals/how-to-file" />
+<link rel="revision" href="/filing/individuals/how-to-file" />
 <script src="/pub/google_tag/google_tag.script.js?pr0gsp"></script>
 <script>window.a2a_config=window.a2a_config||{};a2a_config.callbacks=[];a2a_config.overlays=[];a2a_config.templates={};a2a_config.no_3p=1;</script>
 
-    <title>Filing | Internal Revenue Service</title>
+    <title>How to File | Internal Revenue Service</title>
     <link rel="stylesheet" href="/pub/css/css_0j3VwtmocFmZKfDQhacp2wdyXTlDu6QOQ4y0gON6ApA.css?pr0gsp" media="all" />
 <link rel="stylesheet" href="/pub/css/css_0LE714bG1LrFr9VnG-ChSDuJYJ9OpGcPRBszbsntNNw.css?pr0gsp" media="all" />
 <link rel="stylesheet" href="/pub/css/css_W75JJvdMBKjLELOxBqqGZri66157vEpQJItb8eNKDss.css?pr0gsp" media="screen" />
@@ -357,7 +348,7 @@ Search</button></div>
 	<nav  class="main navbar navbar-default navbar-we-mega-menu mobile-collapse hover-action" data-menu-name="main" data-block-theme="pup_irs" data-style="Default" data-animation="None" data-delay="" data-duration="" data-autoarrow="" data-alwayshowsubmenu="" data-action="hover" data-mobile-collapse="0">
 	  <div class="container" aria-label="Main">
 	    <ul  class="we-mega-menu-ul nav nav-tabs">
-  <li  class="we-mega-menu-li active active-trail dropdown-menu" data-level="0" data-element-type="we-mega-menu-li" description="" data-id="e27eb763-2dc4-4ef6-892a-32a7b2383d17" data-submenu="1" hide-sub-when-collapse="" data-group="0" data-class="" data-icon="" data-caption="" data-alignsub="" data-target="">
+  <li  class="we-mega-menu-li dropdown-menu" data-level="0" data-element-type="we-mega-menu-li" description="" data-id="e27eb763-2dc4-4ef6-892a-32a7b2383d17" data-submenu="1" hide-sub-when-collapse="" data-group="0" data-class="" data-icon="" data-caption="" data-alignsub="" data-target="">
       <a class="we-mega-menu-li" title="" href="/filing" target="">File</a>
     <div  class="we-mega-menu-submenu" data-element-type="we-mega-menu-submenu" data-submenu-width="" data-class="" style="width: px">
   <div class="container we-mega-menu-submenu-inner">
@@ -1019,7 +1010,7 @@ Search</button></div>
 
       
         <ul block="pup_irs_mainnavigation" class="menu nav navbar-nav">
-                                          <li class="active">
+                                          <li>
             <a href="/filing" class="top-level-nav-item">File</a>
                             </li>
                                       <li>
@@ -1105,8 +1096,14 @@ Search</button></div>
               <li lang=en xml:lang=en >
                       <a href="/" lang=en xml:lang=en >Home</a>
                   </li>
+              <li lang=en xml:lang=en >
+                      <a href="/filing" lang=en xml:lang=en >File</a>
+                  </li>
+              <li lang=en xml:lang=en >
+                      <a href="/filing" lang=en xml:lang=en >Individuals</a>
+                  </li>
               <li  class="active">
-                      Filing
+                      How to File
                   </li>
           </ol>
   </nav>
@@ -1114,7 +1111,7 @@ Search</button></div>
 
   </div>
 
-                          <h1 class="pup-page-node-type-landing-page__title">Filing for Individuals</h1>
+                          <h1 class="pup-page-node-type-landing-page__title">How to File</h1>
               </div>
     </div>
   </div>
@@ -1127,7 +1124,7 @@ Search</button></div>
   
     
 
-        <ul class="list-inline pull-right links" block="pup_irs_languageswitchercontent"><li hreflang="en" data-drupal-link-system-path="node/19656" class="en is-active"><a href="/filing" class="language-link is-active" lang="en" xml:lang="en" hreflang="en" data-drupal-link-system-path="node/19656">English</a></li><li hreflang="es" data-drupal-link-system-path="node/19656" class="es"><a href="/es/filing" class="language-link" lang="es" xml:lang="es" hreflang="es" data-drupal-link-system-path="node/19656">Español</a></li><li hreflang="zh-hant" data-drupal-link-system-path="node/19656" class="zh-hant"><a href="/zh-hant/filing" class="language-link" lang="zh-hant" xml:lang="zh-hant" hreflang="zh-hant" data-drupal-link-system-path="node/19656">中文 (繁體)</a></li><li hreflang="ko" data-drupal-link-system-path="node/19656" class="ko"><a href="/ko/filing" class="language-link" lang="ko" xml:lang="ko" hreflang="ko" data-drupal-link-system-path="node/19656">한국어</a></li><li hreflang="ru" data-drupal-link-system-path="node/19656" class="ru"><a href="/ru/filing" class="language-link" lang="ru" xml:lang="ru" hreflang="ru" data-drupal-link-system-path="node/19656">Русский</a></li><li hreflang="vi" data-drupal-link-system-path="node/19656" class="vi"><a href="/vi/filing" class="language-link" lang="vi" xml:lang="vi" hreflang="vi" data-drupal-link-system-path="node/19656">Tiếng Việt</a></li><li hreflang="ht" data-drupal-link-system-path="node/19656" class="ht"><a href="/ht/filing" class="language-link" lang="ht" xml:lang="ht" hreflang="ht" data-drupal-link-system-path="node/19656">Kreyòl ayisyen</a></li></ul>
+        <ul class="list-inline pull-right links" block="pup_irs_languageswitchercontent"><li hreflang="en" data-drupal-link-system-path="node/22856" class="en is-active"><a href="/filing/individuals/how-to-file" class="language-link is-active" lang="en" xml:lang="en" hreflang="en" data-drupal-link-system-path="node/22856">English</a></li></ul>
   
 
   </section>
@@ -1158,11 +1155,26 @@ Search</button></div>
         </button>
       </div>
       <ul class="menu nav pup-second-nav">
-              <li class="level-2 is-active is-active-trail" data-indent-level="2">
+              <li class="level-2 is-active-trail is-active-parent" data-indent-level="2">
         <a href="/filing" title="Individuals" id="term-18191" rel="parent" lang="en" xml:lang="en" hreflang="en">Individuals</a>
                                 <ul class="inner">
-              <li class="level-3" data-indent-level="3">
-        <a href="/filing/individuals/how-to-file" title="How to File" id="term-18216" rel="child" lang="en" xml:lang="en" hreflang="en">How to File</a>
+              <li class="level-3 is-active" data-indent-level="3">
+        <a href="/filing/individuals/how-to-file" title="How to File" id="term-18216" rel="parent" lang="en" xml:lang="en" hreflang="en">How to File</a>
+                                <ul class="inner">
+              <li class="level-4" data-indent-level="4">
+        <a href="/help/ita/what-is-my-filing-status" title="Determine Filing Status" id="term-18221" rel="child" lang="en" xml:lang="en" hreflang="en">Determine Filing Status</a>
+              </li>
+          <li class="level-4" data-indent-level="4">
+        <a href="/filing/free-file-do-your-federal-taxes-for-free" title="Free File" id="term-18231" rel="child" lang="en" xml:lang="en" hreflang="en">Free File</a>
+              </li>
+          <li class="level-4" data-indent-level="4">
+        <a href="/filing/e-file-options" title="e-File Options" id="term-18226" rel="child" lang="en" xml:lang="en" hreflang="en">e-File Options</a>
+              </li>
+          <li class="level-4" data-indent-level="4">
+        <a href="/filing/where-to-file-paper-tax-returns-with-or-without-a-payment" title="Mailing Addresses" id="term-18236" rel="child" lang="en" xml:lang="en" hreflang="en">Mailing Addresses</a>
+              </li>
+        </ul>
+  
               </li>
           <li class="level-3" data-indent-level="3">
         <a href="/filing/individuals/when-to-file" title="When to File" id="term-18266" rel="child" lang="en" xml:lang="en" hreflang="en">When to File</a>
@@ -1229,173 +1241,99 @@ Search</button></div>
             
           
     <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12">
-                <div class="block-region-first-row-col-1"><section data-block-plugin-id="entity_field:node:field_alert" class="block block-ctools-block block-entity-fieldnodefield-alert clearfix">
-  
-    
-
-      
-            <div class="field field--name-field-alert field--type-entity-reference field--label-hidden field--item"> 
-
-
-	
-<div class="pup-media-alert">
-    <div class="pup-media-alert__info" role="alert">
-        <div class="pup-media-alert__icon">
-            <i class="fa fa-info-circle"  aria-label="Info Alert"></i>
-        </div>
-
-        <div class="pup-media-alert__content">
-           <h2 class="pup-media-alert__content-title">Keep your taxes on the right track</h2>
-           <p>
-            <div class="field field--name-field-pup-alert-message field--type-text-long field--label-hidden field--item"><ul><li>Didn’t File Yet? <a data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="0a2fc2c3-9e78-4514-b1dc-6959b2f5e891" href="/filing/free-file-do-your-federal-taxes-for-free" title="IRS Free File">IRS Free File</a> available until Oct 15.</li>
-	<li>It pays to <a data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="52e75a09-0ba2-4838-8cd0-d8a46a447179" href="/individuals/employees/tax-withholding" title="Tax Withholding">check your withholding</a> now to get a refund (or owe less) next year.</li>
-	<li>See <a data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="cafb3f9c-554a-488e-90d3-f403a26dc185" href="/taxtopics/tc202" title="Tax Payment Options">Tax Payment Options</a> if you couldn’t pay the amount due by the April deadline.</li>
-</ul></div>
-      </p>
-        </div>
-    </div>
-</div>
-</div>
-      
-  </section>
-
-</div>
-            </div>
-                            </div>
-      
-        
-    <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12">
-                <div class="block-region-second-row-col-1">  
+                    <div class="col-lg-6 col-md-6 col-sm-12">
+                <div class="block-region-first-row-col-1">  
 <div class="pup-content-box-with-buttons">
 
-  <section data-block-plugin-id="block_content:da1c8ef9-7730-4c41-90eb-e49f9c90b706" class="block block-block-content block-block-contentda1c8ef9-7730-4c41-90eb-e49f9c90b706 clearfix">
-          <div class="pup-content-box-title">What You Need to Know</div>
+  <section data-block-plugin-id="block_content:b63ee84d-ed59-4a8b-8f60-f4c233a955df" class="block block-block-content block-block-contentb63ee84d-ed59-4a8b-8f60-f4c233a955df clearfix">
+          <div class="pup-content-box-title"></div>
       <div>
-            <div class="field field--name-body field--type-text-with-summary field--label-hidden field--item"><p>Many people are required to file U.S. tax returns annually, while others choose to file in order to claim credits or other benefits.</p>
+            <div class="field field--name-body field--type-text-with-summary field--label-hidden field--item"><p>You will usually receive your refund within 3 weeks of the date when the IRS receives your return, even faster if you elect to have it directly deposited into your checking or savings account.</p>
 </div>
       </div>
             <div class="row">
-                  <div class = "col-md-4 col-sm-12 col-xs-12">
+                  <div class = "col-md-12 col-sm-12 col-xs-12">
             <div class="">
               
 
   <div class="paragraph paragraph--type--pup-button-links paragraph--view-mode--default">
     
-      <a href='/help/ita/do-i-need-to-file-a-tax-return' class="btn btn-primary pup-content-box-btn">Do I Need to File?</a>
+      <a href='https://www.irs.gov/filing/e-file-options' class="btn btn-primary pup-content-box-btn">E-File Options</a>
 
       </div>
 
             </div>
           </div>
-                          <div class = "col-md-4 col-sm-12 col-xs-12">
-            <div class="">
-              
-
-  <div class="paragraph paragraph--type--pup-button-links paragraph--view-mode--default">
-    
-      <a href='/filing/individuals/how-to-file' class="btn btn-primary pup-content-box-btn">How Do I File?</a>
-
-      </div>
-
-            </div>
-          </div>
-                          <div class = "col-md-4 col-sm-12 col-xs-12">
-            <div class="">
-              
-
-  <div class="paragraph paragraph--type--pup-button-links paragraph--view-mode--default">
-    
-      <a href='/filing/where-to-file-paper-tax-returns-with-or-without-a-payment' class="btn btn-primary pup-content-box-btn">Where Do I File?</a>
-
-      </div>
-
-            </div>
-          </div>
-              </div>
+                              </div>
       </section>
 </div>
 </div>
             </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12">
+                <div class="block-region-first-row-col-2">  
+<div class="pup-content-box-with-buttons">
+
+  <section data-block-plugin-id="block_content:173b491e-d778-49cf-8cfc-36d50c1a00ad" class="block block-block-content block-block-content173b491e-d778-49cf-8cfc-36d50c1a00ad clearfix">
+          <div class="pup-content-box-title"></div>
+      <div>
+            <div class="field field--name-body field--type-text-with-summary field--label-hidden field--item"><p>If you mail a paper Form 1040, U.S. Individual Income Tax Return (PDF), it can take 6 to 8 weeks to process your return.</p></div>
+      </div>
+            <div class="row">
+                  <div class = "col-md-12 col-sm-12 col-xs-12">
+            <div class="">
+              
+
+  <div class="paragraph paragraph--type--pup-button-links paragraph--view-mode--default">
+    
+      <a href='/filing/where-to-file-paper-tax-returns-with-or-without-a-payment' class="btn btn-primary pup-content-box-btn">Mailing Addresses</a>
+
+      </div>
+
+            </div>
+          </div>
+                              </div>
+      </section>
+</div>
+</div>
+            </div>
+                    </div>
+      
+        
+    <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12">
+                <div class="block-region-second-row-col-1">
+
+ 
+
+<section data-block-plugin-id="block_content:8435fdb7-b58d-43ab-8b5c-433bb18dc5a0" class="block block-block-content block-block-content8435fdb7-b58d-43ab-8b5c-433bb18dc5a0 clearfix">
+  
+    
+
+      
+            <div class="field field--name-body field--type-text-with-summary field--label-hidden field--item"><h2>Signing the Return</h2>
+
+<p>For signing an electronic return see <a data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="c17492e6-b77a-47b0-9543-3cbdafd6d4e6" href="/e-file-providers/signing-an-electronic-tax-return" title="Signing an Electronic Return">How do I sign my tax return when I e-file</a>?</p>
+
+<p>For signing a paper tax return:</p>
+
+<ul><li>If you file a joint return, both spouses must sign the return. If your spouse cannot sign because of a medical condition and requests that you sign the return, sign your spouse's name in the proper place, followed by the word "by" then your signature, followed by the word "husband" or "wife." Be sure to also sign in the regular space provided for your signature. Attach a statement that includes the form number of the return you're filing, the tax year, the reason your spouse cannot sign the return, and that your spouse has agreed to your signing for him or her. If you're the guardian for your spouse who is mentally incompetent, you may sign the return for your spouse as "guardian."</li>
+	<li>If your spouse cannot sign the return for any other reason, you may only sign it if you have a valid power of attorney. You should attach the document granting you power of attorney to the return. You may use <a data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="95a30957-f43b-41b3-aab5-eb93d42af1f2" href="/forms-pubs/about-form-2848" title="About Form 2848">Form 2848</a>, Power of Attorney and Declaration of Representative (PDF) for this purpose.</li>
+	<li>If you're filing a return for a minor child who cannot sign the return, sign the child's name followed by the word "by," your signature, and your relationship, such as "parent" or "guardian for minor child.</li>
+</ul></div>
+      
+  </section>
+
+</div>
+            </div>
                             </div>
     
         
     <div class="row">
-                    <div class="col-lg-6 col-md-6 col-sm-12">
-                <div class="block-region-third-row-col-1">
-
- 
-
-<section data-block-plugin-id="block_content:c3d4698c-cec6-4bff-bd96-de02f681cab0" class="block block-block-content block-block-contentc3d4698c-cec6-4bff-bd96-de02f681cab0 clearfix">
-  
-    
-
-      
-            <div class="field field--name-body field--type-text-with-summary field--label-hidden field--item"><h2>Popular</h2>
-
-<ul><li><a data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="a30296cc-6e05-4dd1-931f-6ccf40afa66e" href="/refunds" title="Where’s My Refund?">Where’s My Refund?</a></li>
-	<li><a data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="375ad50a-8cda-4b40-8cc1-8cd3facd7307" href="/payments" title="Payments ">Options for paying your taxes</a></li>
-	<li><a data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="ed46691f-c0fc-41b5-8c75-a97b806da9d7" href="/businesses/small-businesses-self-employed/filing-past-due-tax-returns" title="Filing past due returns">Filing past due returns</a></li>
-	<li><a data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="c00a80ab-6342-4661-9bd0-f386449f7a16" href="/individuals/understanding-your-irs-notice-or-letter" title="Understanding Your IRS Notice or Letter">Understanding Your IRS Notice or Letter</a></li>
-	<li><a data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="40e49abc-e11f-4aca-9c01-069d8c62963a" href="/forms-pubs/about-form-1040x" title="About 1040-x">Fix/Correct a Return</a></li>
-	<li><a data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="fccda64d-6191-473c-9786-72f264eca8e0" href="/filing/wheres-my-amended-return" title="Where's My Amended Return">Where's My Amended Return</a></li>
-	<li><a data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="e8471673-3c14-4749-a65f-96bb3ea9e361" href="/tax-reform" title="Tax Reform">Tax Reform</a></li>
-	<li><a data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="6e66d34b-82c7-4109-b00d-3193311da1d3" href="/businesses/small-businesses-self-employed/employer-id-numbers" title="Employer Identification Number (EIN)">Employer Identification Number (EIN)</a></li>
-</ul></div>
-      
-  </section>
-
-</div>
-            </div>
-                            <div class="col-lg-6 col-md-6 col-sm-12">
-                <div class="block-region-third-row-col-2">
-
- 
-
-<section data-block-plugin-id="block_content:3a32e270-abf3-4a52-b2d6-535581d879cc" class="block block-block-content block-block-content3a32e270-abf3-4a52-b2d6-535581d879cc clearfix">
-  
-    
-
-      
-            <div class="field field--name-body field--type-text-with-summary field--label-hidden field--item"><h2>Forms &amp; Instructions</h2>
-
-<ul><li><a data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="d6635433-611d-474d-aea4-0f816139e0bf" href="/forms-pubs/about-form-1040" title="About Form 1040">Form 1040</a></li>
-	<li><a data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="40e49abc-e11f-4aca-9c01-069d8c62963a" href="/forms-pubs/about-form-1040x" title="About Form 1040-X">Form 1040-X</a></li>
-	<li><a data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="95a30957-f43b-41b3-aab5-eb93d42af1f2" href="/forms-pubs/about-form-2848" title="About Form 2848">Form 2848</a></li>
-	<li><a data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="c4cb71f9-aa3a-4d96-8253-061319d1a98f" href="/identity-theft-fraud-scams" title="Identity Theft, Fraud &amp; Scams">Renew Individual Taxpayer Identification Number Identity Protection: Prevention, Detection and Victim Assistance</a></li>
-	<li><a data-entity-substitution="pup_linkit_media" data-entity-type="media" data-entity-uuid="f93cf5aa-80ed-4c97-8f71-6c5377dce1c4" href="https://www.ssa.gov/myaccount/" title="Replacement Form SSA-1099">Replacement Form SSA-1099</a></li>
-</ul></div>
-      
-  </section>
-
-</div>
-            </div>
-                    </div>
+                            </div>
     
 
         
     <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12">
-                <div class="block-region-fourth-row-col-1"><section data-block-plugin-id="entity_field:node:body" class="block block-ctools-block block-entity-fieldnodebody clearfix">
-  
-    
-
-      
-  <div class="field field--name-body field--type-text-with-summary field--label-visually_hidden">
-    <div class="field--label sr-only">Body</div>
-              <div class="field--item"><h2>Other Resources</h2>
-
-<ul><li>Get a copy of your <a href="https://www.irs.gov/individuals/get-transcript " title="Get Transcript">tax record</a> to view your tax account transactions or line-by-line tax return information for a specific tax year. Go to <a data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="2587138d-ebc2-4787-8b10-13cb2fc1e3ed" href="/payments/view-your-tax-account" title="View Your Tax Account">IRS.gov/account</a> to view your balance, payment history or access your tax records.</li>
-	<li><a data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="6e27148c-9038-4367-80e6-1c72fcd98636" href="/tax-professionals/choosing-a-tax-professional" title="Hire a tax professional">Get help choosing a tax professional</a> to file your taxes.</li>
-	<li><a href="https://www.irs.gov/newsroom/tax-scamsconsumer-alerts" title="Tax scams/consumer alert">Tax scams/consumer alerts</a></li>
-</ul></div>
-          </div>
-
-  </section>
-
-</div>
-            </div>
                             </div>
     
 </div>
@@ -1419,7 +1357,7 @@ Search</button></div>
   
     
 
-      <span class="a2a_kit a2a_kit_size_24 addtoany_list" data-a2a-url="https://www.irs.gov/filing" data-a2a-title="Filing"><div class="pup-share-items"><ul class="nav navbar-nav navbar-right"><li class="dropdown"><a href="#" class="dropdown-toggle pup-share-link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Share</a><ul class="dropdown-menu"><li><a class="a2a_button_facebook pup-social-title">&nbsp;Facebook</a></li><li><a class="a2a_button_twitter pup-social-title">&nbsp;Twitter</a></li><li><a class="a2a_button_linkedin pup-social-title">&nbsp;Linkedin</a></li><li role="separator" class="divider"></li></ul></li><li><button class="pup-print" type="button" onclick="javascript:print(); ga('send', 'event', 'Print Button', 'Print', 'Print Page');">Print</button></li></ul></div></span>
+      <span class="a2a_kit a2a_kit_size_24 addtoany_list" data-a2a-url="https://www.irs.gov/filing/individuals/how-to-file" data-a2a-title="How to File"><div class="pup-share-items"><ul class="nav navbar-nav navbar-right"><li class="dropdown"><a href="#" class="dropdown-toggle pup-share-link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Share</a><ul class="dropdown-menu"><li><a class="a2a_button_facebook pup-social-title">&nbsp;Facebook</a></li><li><a class="a2a_button_twitter pup-social-title">&nbsp;Twitter</a></li><li><a class="a2a_button_linkedin pup-social-title">&nbsp;Linkedin</a></li><li role="separator" class="divider"></li></ul></li><li><button class="pup-print" type="button" onclick="javascript:print(); ga('send', 'event', 'Print Button', 'Print', 'Print Page');">Print</button></li></ul></div></span>
   </section>
 
 
@@ -1659,10 +1597,10 @@ Search</button></div>
   </div>
 
     
-    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/19656","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","dataLayer":{"defaultLang":"en","languages":{"en":{"id":"en","name":"English","direction":"ltr","weight":-10},"es":{"id":"es","name":"Spanish","direction":"ltr","weight":-9},"zh-hans":{"id":"zh-hans","name":"Chinese, Simplified","direction":"ltr","weight":-8},"zh-hant":{"id":"zh-hant","name":"Chinese, Traditional","direction":"ltr","weight":-7},"ko":{"id":"ko","name":"Korean","direction":"ltr","weight":-6},"ru":{"id":"ru","name":"Russian","direction":"ltr","weight":-5},"vi":{"id":"vi","name":"Vietnamese","direction":"ltr","weight":-4},"ht":{"id":"ht","name":"Haitian Creole","direction":"ltr","weight":-3}}},"bootstrap":{"forms_has_error_value_toggle":1,"modal_animation":1,"modal_backdrop":"true","modal_focus_input":1,"modal_keyboard":1,"modal_select_text":1,"modal_show":1,"modal_size":"","popover_enabled":1,"popover_animation":1,"popover_auto_close":1,"popover_container":"body","popover_content":"","popover_delay":"0","popover_html":0,"popover_placement":"right","popover_selector":"","popover_title":"","popover_trigger":"click","popover_trigger_autoclose":1,"tooltip_enabled":1,"tooltip_animation":1,"tooltip_container":"body","tooltip_delay":"0","tooltip_html":0,"tooltip_placement":"auto left","tooltip_selector":"","tooltip_trigger":"hover"},"ajaxTrustedUrl":{"\/site-index-search":true},"chosen":{"selector":"select:visible","minimum_single":20,"minimum_multiple":20,"minimum_width":200,"options":{"disable_search":false,"disable_search_threshold":0,"allow_single_deselect":false,"search_contains":true,"placeholder_text_multiple":"Choose some option","placeholder_text_single":"Choose an option","no_results_text":"No results match","inherit_select_classes":true}},"ajax":[],"user":{"uid":0,"permissionsHash":"039fb4a434ae1d29283c2e31079424b809e38ca1a3e491007bbcedeaf11a13d5"}}</script>
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/22856","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","dataLayer":{"defaultLang":"en","languages":{"en":{"id":"en","name":"English","direction":"ltr","weight":-10},"es":{"id":"es","name":"Spanish","direction":"ltr","weight":-9},"zh-hans":{"id":"zh-hans","name":"Chinese, Simplified","direction":"ltr","weight":-8},"zh-hant":{"id":"zh-hant","name":"Chinese, Traditional","direction":"ltr","weight":-7},"ko":{"id":"ko","name":"Korean","direction":"ltr","weight":-6},"ru":{"id":"ru","name":"Russian","direction":"ltr","weight":-5},"vi":{"id":"vi","name":"Vietnamese","direction":"ltr","weight":-4},"ht":{"id":"ht","name":"Haitian Creole","direction":"ltr","weight":-3}}},"bootstrap":{"forms_has_error_value_toggle":1,"modal_animation":1,"modal_backdrop":"true","modal_focus_input":1,"modal_keyboard":1,"modal_select_text":1,"modal_show":1,"modal_size":"","popover_enabled":1,"popover_animation":1,"popover_auto_close":1,"popover_container":"body","popover_content":"","popover_delay":"0","popover_html":0,"popover_placement":"right","popover_selector":"","popover_title":"","popover_trigger":"click","popover_trigger_autoclose":1,"tooltip_enabled":1,"tooltip_animation":1,"tooltip_container":"body","tooltip_delay":"0","tooltip_html":0,"tooltip_placement":"auto left","tooltip_selector":"","tooltip_trigger":"hover"},"ajaxTrustedUrl":{"\/site-index-search":true},"chosen":{"selector":"select:visible","minimum_single":20,"minimum_multiple":20,"minimum_width":200,"options":{"disable_search":false,"disable_search_threshold":0,"allow_single_deselect":false,"search_contains":true,"placeholder_text_multiple":"Choose some option","placeholder_text_single":"Choose an option","no_results_text":"No results match","inherit_select_classes":true}},"ajax":[],"user":{"uid":0,"permissionsHash":"039fb4a434ae1d29283c2e31079424b809e38ca1a3e491007bbcedeaf11a13d5"}}</script>
 <script src="/pub/js/js_q2b8BppCtWSz47tD3KGjH4apCEJN3UVfsl6qRLoWfCg.js"></script>
 <script src="https://static.addtoany.com/menu/page.js" async></script>
 <script src="/pub/js/js_GuWyAyVdrRQVULOf898YaV3HmqBW_Yd24Pt2_ovdvZo.js"></script>
 
-  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"b67fc6a152","applicationID":"70700070","transactionName":"blMHY0AHDUcDUEZQWFcZJFRGDwxaTUNTXlJmVQRUWgM=","queueTime":0,"applicationTime":40,"atts":"QhQEFQgdHkk=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"b67fc6a152","applicationID":"70700070","transactionName":"blMHY0AHDUcDUEZQWFcZJFRGDwxaTUNTXlJmVQRUWgM=","queueTime":0,"applicationTime":23,"atts":"QhQEFQgdHkk=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
 </html>
