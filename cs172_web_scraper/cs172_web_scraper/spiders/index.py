@@ -1,89 +1,71 @@
-import sys, os, lucene
-import re
+import sys, os, lucene, re, urllib.request
 from java.nio.file import Paths
-from org.apache.lucene.util.Constants import 
+from org.apache.lucene.analysis.core import StopAnalyzer
 from org.apache.lucene.analysis.miscellaneous import LimitTokenCountAnalyzer
 from org.apache.lucene.analysis.standard import StandardAnalyzer, StandardTokenizer, StandardFilter
-from org.apache.lucene.document import Document, Field, FieldType
-from org.apache.lucene.index import FieldInfo, IndexWriter, FileReader
+from org.apache.lucene.analysis import StopFilter, LowerCaseFilter
+from org.apache.lucene.document import Document, Field, FieldType, TextField
+#import org.apache.lucene.document
+from org.apache.lucene.index import FieldInfo, IndexWriter
 from org.apache.lucene.index import IndexOptions, IndexWriterConfig
 from org.apache.lucene.store import SimpleFSDirectory
 
+
+
 FILE_DIR = '/pages'
 INDEX_DIR = '/indexes'
-
-class Page():
-	def __init__(self, title, content):
-		self.title = title
-		self.content = content
-
-	def getContent(self):
-		return self.content
-
-	def getTitle(self):
-		return self.title
 
 class Indexer(object):
 	# Creates index adds it to docs
 	# indexDir Directory is where the index is created
 	def __init__(self, indexDir):
-		f = File(indexDir)
+		f = Paths.get(indexDir)
 		self._dir = SimpleFSDirectory(f)
-		analyzer = StopFilter(LowerCaseFilter(StandardAnalyzer()), StopAnalyzer.ENGLISH_STOP_WORDS_SET)
-		self._writer = IndexWriter(self._dir, analyzer)
+		analyzer = StandardAnalyzer()
+		config = IndexWriterConfig(analyzer)
+		config.setOpenMode(IndexWriterConfig.OpenMode.CREATE)
+		self._writer = IndexWriter(self._dir, config)
 		
 	def close(self):
 		self._writer.close()
 
-	def getDoc(self, file, filename):
-		content = Field(LuceneConstants.CONTENTS, FileReader())
-		filename = Field(LuceneConstants.FILE_NAME,
-						 filename,
-						 Field.Store.YES,
-						 Field.Index.NOT_ANALYZED)
-		path = Field(LuceneConstants.FILE_PATH,
-					 str(os.getcwd()+FILE_DIR+'/'+file),
-					 Field.Store.YES,
-					 Field.Index.NOT_ANALYZED)
-		doc = Document()
-		doc.add(content)
-		doc.add(filename)
-		doc.add(path)
-		return doc
+	def getDoc(self, file):
+		try:
+			f = open(os.getcwd()+FILE_DIR+'/'+file, "r")
+			try:
+				c = str(f.read())
+			except Exception:
+				return
+			content = TextField("contents", c, Field.Store.YES)
+			filename = TextField("filename",
+							 str(Paths.get(file)),
+							 Field.Store.YES)
+			path = TextField("filepath",
+						 str(os.getcwd()+FILE_DIR+'/'+file),
+						 Field.Store.YES)
+			doc = Document()
+			doc.add(content)
+			doc.add(filename)
+			doc.add(path)
+			return doc
+		except Exception:
+			print(type(Exception).__name__)
+			return
+
 	def indexFile(self, file):
-		self._writer.addDocument(getDoc(file))
+		if ( self.getDoc(file) is not None ):
+			self._writer.addDocument(self.getDoc(file))
 	#pass in absolute path when calling this function
-	def createIndex(self, path, filter):
+	def createIndex(self, path):
 		for file in os.listdir(path):
+			print(file)
 			if os.path.isfile(path+"/"+file):
 				self.indexFile(file)
 		return self._writer.numDocs()
 
 
-if __name == '__main__':
+if __name__ == '__main__':
 	lucene.initVM(vmargs=['-Djava.awt.headless=true'])
 	print("lucene", lucene.VERSION)
-	testIndexer = Indexer(os.getcwd()+FILE_DIR)
-	'''
-	initJVM()
-	global FILE_DIR
-	global INDEX_DIR
-	fd = os.getcwd()+FILE_DIR
-	indexdir = os.getcwd()+INDEX_DIR
-	allPages = []
-	for file in os.listdir(fd):
-		content = []
-		filename = file[:file.find('.html')]
-		f = open(fd+'/'+file, 'r')
-		try:
-			for line in f:
-				if ( line != '' ):
-					content.append(line)
-		except UnicodeDecodeError:
-			p = Page(filename, '\n'.join(content))
-			allPages.append(p)
-			f.close()
-			continue
-		p = Page(filename, '\n'.join(content))
-		allPages.append(p)
-		print(filename)'''
+	testIndexer = Indexer(os.getcwd()+INDEX_DIR)
+	testIndexer.createIndex(os.getcwd()+FILE_DIR)
