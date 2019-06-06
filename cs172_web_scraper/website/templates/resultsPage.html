@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="results">
+    <h1>Your query {{query}} yielded these results!</h1>
+    <table>
+        <tr>
+            <th>Rank</th>
+            <th>Score</th>
+            <th>Title</th>
+            <th>Content</th>
+        </tr>
+
+        {% for (rank, score, title, contents) in result_list %}
+        <tr class="results_class"> <td>{{rank}}</td><td>{{score}}</td><td>{{title}}</td><td>{{contents}}</td></tr>
+        {% endfor %}
+    </table>
+
+
+
+</div>
+
+{% endblock %}

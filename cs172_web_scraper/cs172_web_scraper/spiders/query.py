@@ -13,6 +13,8 @@ INDEX_DIR = '/indexes'
 
 FIELDS = ["contents", "filename"]
 class Searcher:
+	#comment out to run searcher by itself
+	lucene.initVM(vmargs=['-Djava.awt.headless=true'])
 	def __init__(self, indexDir):
 		f = Paths.get(indexDir)
 		self._dir = SimpleFSDirectory(f)
@@ -22,19 +24,23 @@ class Searcher:
 		self._weights.put(FIELDS[1],0.2 )
 	def search(self, query):
 		SHOULD = BooleanClause.Occur.SHOULD
-		q = MultiFieldQueryParser.parse("white house", FIELDS, [SHOULD, SHOULD], StandardAnalyzer())
-		print(q.toString())
+		q = MultiFieldQueryParser.parse(query, FIELDS, [SHOULD, SHOULD], StandardAnalyzer())
+#		print(q.toString())
 		topHits = 100
 		scores = self._indexSearcher.search(q, topHits).scoreDocs
-		for i in range(3):
+		results=[]
+		for i in range(10):
 			doc = self._indexSearcher.doc(scores[i].doc)
-			print(i+1)
-			print("Score: ", scores[i].doc)
-			print("Title: ", doc.get("filename"))
-			print("Contents: ", doc.get("contents"))
+			results.append(i+1, scores[i].doc, doc.get("filename"), doc.get("contents"))
+#			print(i+1)
+#			print("Score: ", scores[i].doc)
+#			print("Title: ", doc.get("filename"))
+#			print("Contents: ", doc.get("contents"))
+		return results
 
 if __name__ == '__main__':
-	lucene.initVM(vmargs=['-Djava.awt.headless=true'])
+#uncomment to run this by itself
+#	lucene.initVM(vmargs=['-Djava.awt.headless=true'])
 	print("lucene", lucene.VERSION)
 	testSearcher = Searcher(os.getcwd()+INDEX_DIR)
 	testSearcher.search("ABC")
