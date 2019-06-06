@@ -16,7 +16,7 @@ def home_post():
 #test-case for building the table
 #    qResults =[(1,1,"test1","test1c"), (2,2,"test2","test2c"), (3,3,"test3", "test3c")]
     qResults = Searcher.search(user_query)
-    return render_template('resultsPage.html', query=query, result_list=qResults)
+    return render_template('resultsPage.html', query=user_query, result_list=qResults)
 
 
 @app.route('/results', methods=['POST'])
@@ -25,7 +25,7 @@ def results():
     qResults = Searcher.search(user_query)
 #test case for building the results table
 #    qResults = [(1, 1, "test1", "test1c"), (2, 2, "test2", "test2c"), (3, 3, "test3", "test3c")]
-    return render_template('resultsPage.html', query=query,result_list=qResults)
+    return render_template('resultsPage.html', query=user_query,result_list=qResults)
 
 
 if __name__ == '__main__':
