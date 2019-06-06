@@ -3,6 +3,7 @@ body {
   padding: 0;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #F1AB00;
+  background-color: #003066;
 }
 /*
  * Formatting the header area
@@ -19,7 +20,7 @@ header h1.logo {
   font-size: 1.7em;
   color: #F1AB00;
   text-transform: uppercase;
-  float: left;
+  float: top;
 }
 header h1.logo:hover {
   color: #fff;
@@ -33,11 +34,16 @@ header h1.logo:hover {
   margin: 0 auto;
 }
 div.home {
-  padding: 10px 0 30px 0;
-  background-color:#003066;
+  padding: 50px 0 50px 0;
+  background-color: #2D6CC0;
   -webkit-border-radius: 6px;
      -moz-border-radius: 6px;
           border-radius: 6px;
+
+}
+h1.prompt{
+  position: relative;
+  alignment: center;
 }
 div.results {
   padding: 10px 0 30px 0;
@@ -62,7 +68,8 @@ h3 {
 }
 .menu {
   float: right;
-  margin-top: 8px;
+  margin-top: 15px;
+  margin-right: 5px;
 }
 .menu li {
   display: inline;
@@ -71,11 +78,20 @@ h3 {
   margin-left: 35px;
 }
 .menu li a {
-  color: #444;
+  color: #F1AB00;
   text-decoration: none;
 }
 
 .search-container {
-  background-color: black;
+  background-color:#003066 ;
+  height: 100px;
+  width: 100px;
+  position: absolute;
+  left: 50%;
+  margin-left: -50px;
+  top: 50%;
+  margin-top: -50px;
+
+
 
 }
